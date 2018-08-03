@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/black_background"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/listView2"
+        style="@style/Sherlock.__Widget.Holo.ListView"
+       
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+  
+
+</LinearLayout>

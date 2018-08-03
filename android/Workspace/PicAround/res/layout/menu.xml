@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>   
+  <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <item    
+    android:id="@+id/more"    
+    android:title="a"    
+    >
+    <menu>
+        <item android:id="@+id/Organize"
+        android:title="b" />
+
+        <item android:id="@+id/Export"
+        android:title="d" />
+    </menu>  
+   </item> 
+
+   <item    
+    android:id="@+id/add"    
+    android:title="c"  
+    android:icon="@drawable/ic_compose_inverse"/>
+   </menu>

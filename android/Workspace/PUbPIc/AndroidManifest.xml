@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.android.PubPIc"
+    android:versionCode="1"
+    android:uiOptions="splitActionBarWhenNarrow"
+    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="15"/>
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	 
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" android:theme="@style/Sherlock.__Theme.Light">
+        <activity
+            android:name=".Main"
+            android:label="@string/app_name"
+             android:theme="@style/Sherlock.__Theme.DarkActionBar" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+      
+           <service android:name="UploadService" ></service>
+           <activity class=".PubPicActivity2" android:label="@string/app_name"  android:name ="PubPicActivity2" android:theme="@style/Sherlock.__Theme.Light" android:screenOrientation="portrait">
+           </activity>
+           <activity android:name="CameraIntent" android:theme="@style/Sherlock.__Theme.Light" android:screenOrientation="portrait"></activity>
+           <activity android:name="PUbPIcActivity" android:screenOrientation="portrait"></activity>
+           <activity android:label="@string/dialog" android:name="DialogEventsNearToYou"  android:theme="@style/Theme.Sherlock.Dialog" android:screenOrientation="portrait"></activity>
+           <activity android:label="@string/create_events" android:name="AddNewEventFragment"  android:theme="@style/Theme.Sherlock.Dialog" android:screenOrientation="portrait"></activity>
+           <activity android:name="TabNavigation" android:theme="@style/Sherlock.__Theme.Light" android:screenOrientation="portrait"></activity>
+           <activity android:name="GalleryActivity" android:theme="@style/Theme.Sherlock" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
+           <activity android:name="PhotoDetailsActivity" android:theme="@style/Theme.Sherlock" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
+    </application>
+</manifest>

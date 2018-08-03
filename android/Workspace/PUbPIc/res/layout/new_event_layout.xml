@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    -
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:shadowDx="5.0"
+        android:shadowDy="5.0"
+        android:shadowRadius="3.0"
+        android:text="Enter Event Name:"
+         android:textColor="#4E9ABA"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/editText_new_event_name"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+         android:layout_marginLeft="10dp"
+        android:inputType="textCapSentences|textShortMessage" >
+
+        <requestFocus android:layout_width="wrap_content" />
+
+    </EditText>
+    
+     <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:shadowDx="5.0"
+        android:shadowDy="5.0"
+        android:shadowRadius="3.0"
+        android:text="Select location:"
+         android:textColor="#4E9ABA"
+        android:textSize="15dp" />
+<Spinner
+    android:id="@+id/places_spinner"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+
+
+
+ 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/ok__createnewevent"
+            android:layout_width="158dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:text="OK" />
+
+        <Button
+            android:id="@+id/cancel__createnewevent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="Cancel" />
+    </LinearLayout>
+
+</LinearLayout>

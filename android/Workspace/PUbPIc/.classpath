@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="cots/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="cots/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="cots/httpclient-4.1.3.jar"/>
+	<classpathentry kind="lib" path="cots/httpclient-cache-4.1.3.jar"/>
+	<classpathentry kind="lib" path="cots/httpcore-4.1.4.jar"/>
+	<classpathentry kind="lib" path="cots/httpmime-4.1.3.jar"/>
+	<classpathentry kind="lib" path="cots/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="cots/org.apache.httpcomponents.httpclient_4.1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="cots/commons-httpclient-3.1.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="assets"/>
+	<classpathentry kind="src" path="/com_actionbarsherlock"/>
+	<classpathentry kind="src" path="/com_facebook_android"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

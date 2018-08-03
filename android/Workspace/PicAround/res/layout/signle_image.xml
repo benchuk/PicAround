@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:scaleType="center" >
+
+    <ImageView
+        android:id="@+id/imagedetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/spinner_white"
+        android:scaleType="fitCenter" />
+
+    <FrameLayout
+        android:id="@+id/overlay_image_background"
+        android:layout_width="250dp"
+        android:layout_height="61dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="#0f0f0f"
+        android:orientation="vertical"
+        android:shadowColor="#0f0f0f"
+        android:shadowDx="1.2"
+        android:shadowDy="1.2"
+        android:shadowRadius="1.5" >
+
+        <ImageView
+            android:id="@+id/overlay_image"
+            android:layout_width="70px"
+            android:layout_height="80px"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/camera" />
+
+        <TextView
+            android:id="@+id/eventname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="70dp"
+            android:text="...." />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="70dp"
+            android:shadowColor="#0f0f0f"
+            android:shadowDx="1.2"
+            android:shadowDy="1.2"
+            android:shadowRadius="1.5"
+            android:text="..."
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+   
+
+    <FrameLayout
+        android:id="@+id/preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+ <ListView
+     android:id="@+id/lista"
+     android:layout_width="wrap_content"
+     android:layout_height="118dp"
+     android:drawSelectorOnTop="false" />
+     
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true" >
+
+            <Button
+                android:id="@+id/getLocationButton"
+                style="@style/ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blue_button"
+                android:text="Places" />
+
+             <Button android:id="@+id/camClick"
+                 style="@style/ButtonText"
+                 android:layout_width="61dp"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/red_button"
+                 android:text="C" />
+
+             <Button
+                android:id="@+id/viewImages"
+                style="@style/ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.81"
+                android:background="@drawable/blue_button"
+                android:text="G" />
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.38"
+                style="@style/ButtonText"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_camera2" />
+           
+            <Button
+                android:id="@+id/buttonClick"
+                style="@style/ButtonText"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:background="@drawable/red_button"
+                android:text="Click" />   
+            
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

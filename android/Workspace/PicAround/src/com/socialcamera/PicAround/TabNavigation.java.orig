@@ -1,0 +1,296 @@
+package com.android.PubPIc;
+
+import Services.AsyncGetFacebookIDOperation;
+import Services.ContainerService;
+import Services.FacebookService;
+import Services.LocationService;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.TextView;
+import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.Tab;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
+import com.actionbarsherlock.view.Window;
+
+public class TabNavigation extends SherlockFragmentActivity
+{
+	private LocationService ls;
+	private ContainerService cs;
+	private FacebookService fs;
+	ActionBar bar;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+
+		// requestWindowFeature(Window.FEATURE_PROGRESS);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+
+		setTheme(R.style.Theme_Sherlock_Light_DarkActionBar_ForceOverflow);
+
+		super.onCreate(savedInstanceState);
+		//setTheme(R.style.TextAppearance_Sherlock_Widget_ActionBar_Subtitle_Inverse);
+
+		bar = getSupportActionBar();
+
+		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        bar.setDisplayOptions(0, ActionBar.DISPLAY_HOME_AS_UP);
+		bar.setDisplayHomeAsUpEnabled(false);
+		//bar.setDisplayShowHomeEnabled(false);
+		bar.setDisplayShowTitleEnabled(false);
+		bar.setDisplayUseLogoEnabled(false);
+		// bar.setTitle("Activity Title");
+<<<<<<< .mine
+
+		bar.addTab(bar.newTab().setIcon(R.drawable.placewhite).setTabListener(new TabListener<PlacesFragment>(this, "tab1", PlacesFragment.class, null)));
+		bar.addTab(bar.newTab().setIcon(R.drawable.eventwhite).setTabListener(new TabListener<EventsFragment>(this, "tab2", EventsFragment.class, null)));
+		bar.addTab(bar.newTab().setIcon(R.drawable.camerawhite).setTabListener(new TabListener<CameraFragment>(this, "tab3", CameraFragment.class, null)));
+		bar.addTab(bar.newTab().setIcon(R.drawable.gallerywhite).setTabListener(new TabListener<GalleryFragment>(this, "tab4", GalleryFragment.class, null)));
+
+=======
+		bar.setIcon(ContainerService.getInstance().FacebookUserImage);
+		bar.addTab(bar.newTab().setIcon(R.drawable.placewhite).setTabListener(new TabListener<PlacesFragment>(this, "PlacesFragment", PlacesFragment.class, null)));
+		bar.addTab(bar.newTab().setIcon(R.drawable.eventwhite).setTabListener(new TabListener<EventsFragment>(this, "EventsFragment", EventsFragment.class, null)));
+		bar.addTab(bar.newTab().setIcon(R.drawable.camerawhite).setTabListener(new TabListener<CameraFragment>(this, "CameraFragment", CameraFragment.class, null)));
+		bar.addTab(bar.newTab().setIcon(R.drawable.gallerywhite).setTabListener(new TabListener<GalleryFragment>(this, "GalleryFragment", GalleryFragment.class, null)));
+  bar.setDisplayUseLogoEnabled(false);
+>>>>>>> .r445
+		setSupportProgressBarIndeterminateVisibility(false);
+
+		if (savedInstanceState != null)
+		{
+
+			bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 0));
+		}
+		ls = LocationService.getInstance();
+		ls.LoadService(this);
+<<<<<<< .mine
+
+=======
+		
+>>>>>>> .r445
+		cs = ContainerService.getInstance();
+		cs.TabNavigation = this;
+		cs.ActionBar = bar;
+		if (fs.getInstance().facebookUserID == null)
+		{
+			AsyncGetFacebookIDOperation getID = new AsyncGetFacebookIDOperation()
+			{
+				@Override
+				public void GetIdCompleted(String facebookID)
+				{
+
+				}
+			};
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		// ((Menu) item).findItem(R.drawable.icon).setVisible(false);
+		// MenuItem switchButton = ((Menu) item).findItem(R.drawable.icon);
+
+		switch (item.getItemId())
+		{
+
+			case android.R.id.home:
+
+				// app icon in action bar clicked; go home
+				Intent intent = new Intent(this, CameraIntent.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				return true;
+			case R.drawable.ic_search:
+<<<<<<< .mine
+
+=======
+				
+			tabSwap( "PlacesFragment", "NewEventFregment", AddNewEventFragment.class.getName());
+>>>>>>> .r445
+			default:
+<<<<<<< .mine
+				FragmentTransaction ft = this.getSupportFragmentManager().beginTransaction();
+				Fragment mFragment = this.getSupportFragmentManager().findFragmentByTag("tab2");
+				Fragment mFragment1 = this.getSupportFragmentManager().findFragmentByTag("tab5");
+				ft.hide(mFragment);
+				if (mFragment1 == null)
+				{
+					mFragment = Fragment.instantiate(this, AddNewEventFragment.class.getName(), null);
+					ft.add(android.R.id.content, mFragment, "tab5");
+					ft.commit();
+				}
+=======
+				tabSwap( "EventsFragment", "AddNewEventFragment", AddNewEventFragment.class.getName());
+//				FragmentTransaction ft = this.getSupportFragmentManager().beginTransaction();
+//				 Fragment mFragment = this.getSupportFragmentManager().findFragmentByTag("tab2");
+//				 Fragment mFragment1 = this.getSupportFragmentManager().findFragmentByTag("tab5");
+//				ft.hide(mFragment);
+//				if (mFragment1 == null)
+//				{
+//					mFragment = Fragment.instantiate(this, GalleryFragment.class.getName(), null);
+//					ft.add(android.R.id.content, mFragment, "tab5");
+//					ft.commit();
+//				}
+>>>>>>> .r445
+				// ft.add(android.R.id.content, mFragment1, "tab5");
+				// ft.commit();
+				// bar.removeTab(bar.getSelectedTab());
+				// bar.addTab(bar.newTab().setIcon(R.drawable.placewhite).setTabListener(new
+				// TabListener<PlacesFragment>(this, "tab2",
+				// PlacesFragment.class, null)),1,true);
+
+				return super.onOptionsItemSelected(item);
+
+		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState)
+	{
+		super.onSaveInstanceState(outState);
+		outState.putInt("tab", getSupportActionBar().getSelectedNavigationIndex());
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		 SubMenu sub = menu.addSubMenu("Options");
+		  
+		  
+		
+		// Used to put dark icons on light action bar
+		// boolean isLight = SampleList.THEME == R.style.Theme_Sherlock_Light;
+
+<<<<<<< .mine
+		menu.add("Save").setIcon(true ? R.drawable.ic_compose_inverse : R.drawable.ic_compose).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+=======
+		    sub.add("Save").setIcon(true ? R.drawable.ic_compose_inverse : R.drawable.ic_compose).setShowAsAction(MenuItem.
+SHOW_AS_ACTION_ALWAYS);
+>>>>>>> .r445
+
+		    sub.add("Search").setIcon(true ? R.drawable.ic_search_inverse : R.drawable.ic_search).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+		    sub.add("Refresh").setIcon(true ? R.drawable.ic_refresh_inverse : R.drawable.ic_refresh).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+		    sub.add("Save").setIcon(true ? R.drawable.ic_compose_inverse : R.drawable.ic_compose).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+		    sub.add("Search").setIcon(true ? R.drawable.ic_search_inverse : R.drawable.ic_search).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+		    sub.add("Refresh").setIcon(true ? R.drawable.ic_refresh_inverse : R.drawable.ic_refresh).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+		    sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+			 
+		return true;
+	}
+
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+		FacebookService.getInstance().ExtendAccessTokenIfNeeded(this);
+		this.setProgressBarIndeterminateVisibility(false);
+	}
+
+	// @Override
+	// public void onBackPressed() {
+	// this.setResult(RESULT_OK);
+	// this.finish();
+	// }
+private void tabSwap(String currentfregmentName, String newFregmentName,String newClassName) 
+{
+	FragmentTransaction ft = this.getSupportFragmentManager().beginTransaction();
+	 Fragment mFragment = this.getSupportFragmentManager().findFragmentByTag(currentfregmentName);
+	 Fragment mFragment1 = this.getSupportFragmentManager().findFragmentByTag(newFregmentName);
+	 ft.hide(mFragment);
+	if (mFragment1 == null)
+	{
+		
+		mFragment1 = Fragment.instantiate(this, newClassName, null);
+		ft.add(android.R.id.content, mFragment1, newFregmentName);
+		ft.detach(mFragment);
+		ft.commitAllowingStateLoss();
+		
+	}
+	else
+	{
+		ft.show(mFragment1);	
+	}
+//	ft.commit();
+	}
+
+	public class TabListener<T extends Fragment> implements ActionBar.TabListener
+	{
+		private final FragmentActivity mActivity;
+		private final String mTag;
+		private final Class<T> mClass;
+		private final Bundle mArgs;
+		private Fragment mFragment;
+
+		public TabListener(FragmentActivity activity, String tag, Class<T> clz, Bundle args) {
+			mActivity = activity;
+			mTag = tag;
+			mClass = clz;
+			mArgs = args;
+			FragmentTransaction ft = mActivity.getSupportFragmentManager().beginTransaction();
+
+			// Check to see if we already have a fragment for this tab, probably
+			// from a previously saved state. If so, deactivate it, because our
+			// initial state is that a tab isn't shown.
+			mFragment = mActivity.getSupportFragmentManager().findFragmentByTag(mTag);
+			if (mFragment != null && !mFragment.isDetached())
+			{
+				ft.detach(mFragment);
+			}
+		}
+
+		@Override
+		public void onTabSelected(Tab tab, FragmentTransaction ft)
+		{
+			ft = mActivity.getSupportFragmentManager().beginTransaction();
+
+			if (mFragment == null)
+			{
+				mFragment = Fragment.instantiate(mActivity, mClass.getName(), mArgs);
+				ft.add(android.R.id.content, mFragment, mTag);
+				ft.commit();
+			}
+			else
+			{
+				ft.attach(mFragment);
+				ft.commit();
+			}
+
+		}
+
+		@Override
+		public void onTabUnselected(Tab tab, FragmentTransaction ft)
+		{
+			ft = mActivity.getSupportFragmentManager().beginTransaction();
+
+			if (mFragment != null)
+			{
+				ft.detach(mFragment);
+				ft.commitAllowingStateLoss();
+			}
+
+		}
+
+		@Override
+		public void onTabReselected(Tab tab, FragmentTransaction ft)
+		{
+		}
+	}
+
+}

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/PicApp/!svn/ver/867/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes
+END
+MWTapDetectingView.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWTapDetectingView.h
+END
+MWCaptionView.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWCaptionView.h
+END
+MWPhoto.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWPhoto.h
+END
+MWTapDetectingImageView.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWTapDetectingImageView.h
+END
+MWPhotoProtocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWPhotoProtocol.h
+END
+MWTapDetectingView.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWTapDetectingView.m
+END
+MWZoomingScrollView.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWZoomingScrollView.h
+END
+MWCaptionView.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWCaptionView.m
+END
+MWPhotoBrowser.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWPhotoBrowser.h
+END
+MWPhoto.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWPhoto.m
+END
+MWTapDetectingImageView.m
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWTapDetectingImageView.m
+END
+MWZoomingScrollView.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWZoomingScrollView.m
+END
+MWPhotoBrowser.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/PicApp/!svn/ver/867/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Classes/MWPhotoBrowser.m
+END

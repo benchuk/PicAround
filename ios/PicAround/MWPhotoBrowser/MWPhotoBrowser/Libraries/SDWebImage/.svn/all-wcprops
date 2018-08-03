@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage
+END
+SDWebImageDownloader.m
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageDownloader.m
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/LICENSE
+END
+SDWebImageManagerDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageManagerDelegate.h
+END
+SDWebImageDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageDecoder.h
+END
+SDImageCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDImageCache.h
+END
+SDWebImageManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageManager.h
+END
+SDWebImageDecoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageDecoder.m
+END
+SDImageCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDImageCache.m
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/README.md
+END
+UIButton+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/UIButton+WebCache.h
+END
+SDWebImageManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageManager.m
+END
+UIImageView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/UIImageView+WebCache.h
+END
+SDWebImageCompat.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageCompat.h
+END
+UIButton+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/UIButton+WebCache.m
+END
+UIImageView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/UIImageView+WebCache.m
+END
+SDWebImagePrefetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImagePrefetcher.h
+END
+SDWebImageDownloaderDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageDownloaderDelegate.h
+END
+SDWebImagePrefetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImagePrefetcher.m
+END
+SDWebImageDownloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDWebImageDownloader.h
+END
+SDImageCacheDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/PicApp/!svn/ver/866/trunk/iPhone/PicAround/MWPhotoBrowser/MWPhotoBrowser/Libraries/SDWebImage/SDImageCacheDelegate.h
+END

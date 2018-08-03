@@ -1,0 +1,150 @@
+package com.android.PubPIc;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+
+import Interfaces.UploadEvents;
+import android.app.Activity;
+import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Intent;
+import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.Messenger;
+import android.util.Log;
+import android.widget.Toast;
+
+public class UploadService extends IntentService
+{
+
+	private NotificationManager _notificationManager;
+
+	public UploadService() {
+		super("UploadService");
+
+	}
+
+	// Will be called asynchronously be Android
+	@Override
+	protected void onHandleIntent(Intent intent)
+	{
+		try
+		{
+			// String filePath = intent.getData();
+			String fileName = intent.getStringExtra("filePath");
+			//Uri uri = intent.getData();
+			String userID = intent.getStringExtra("userid");
+			String lat = intent.getStringExtra("lat");
+			String lon = intent.getStringExtra("lon");
+			String alt = intent.getStringExtra("alt");
+			String place = intent.getStringExtra("place");
+			String eventLabel = intent.getStringExtra("SelectedEventName");
+			String eventID = intent.getStringExtra("SelectedEventID");
+			
+			if (userID == null)
+			{
+				userID = "0";
+			}
+			// String fileName = data.getLastPathSegment();
+			// upload.Upload(dir.getAbsolutePath() +"/"+ fileName,
+			// PUbPIcActivity.this);
+			
+			//InputStream stream = getContentResolver().openInputStream(uri);
+			
+			// read this file into InputStream
+			File rootsd = Environment.getExternalStorageDirectory();
+			//File file = new File(rootsd.getAbsolutePath() + "/DCIM" + "/" + fileName);
+			File file = new File(fileName);
+			//File root = Environment.getExternalStoragePublicDirectory(Environment.);
+//			File dir;
+//			File picFile;
+//			if (!root.exists())
+//			{
+//				dir = new File(root.getAbsolutePath());
+//				dir.mkdir();
+//			}
+//			else
+//			{
+//				dir = root;
+//			}
+			//String fileName = String.format("%d.jpg", System.currentTimeMillis());
+			
+//			picFile = new File(dir, fileName);
+//			// write the inputStream to a FileOutputStream
+//			File image = new File(picFile.getAbsolutePath());
+//			OutputStream out = new FileOutputStream(image);
+//		 
+//			int read = 0;
+//			byte[] bytes = new byte[1024];
+//		 
+//			while ((read = stream.read(bytes)) != -1) {
+//				out.write(bytes, 0, read);
+//			}
+//		 
+//			stream.close();
+//			out.flush();
+//			out.close();
+			
+			
+//			 //ExifInterface exif = new ExifInterface(root.getAbsoluteFile() + "/" + image);
+//			 ExifInterface exif = new ExifInterface(root.getAbsoluteFile() + "/" + fileName);
+////			 exif.setAttribute(ExifInterface.TAG_GPS_LATITUDE,lat);
+////			 exif.setAttribute(ExifInterface.TAG_GPS_LONGITUDE,lon);
+//			 
+//			 exif.setAttribute(ExifInterface.TAG_ORIENTATION, ""+ExifInterface.ORIENTATION_FLIP_HORIZONTAL);
+//			 exif.saveAttributes();
+//			 
+			
+			UploadingFiles upload = new UploadingFiles();
+
+			_notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+			UploadedEventsHandler events = new UploadedEventsHandler(this, _notificationManager);
+<<<<<<< .mine
+			UploadFileParams ufp = new UploadFileParams(userID, lat, lon, alt, place, eventLabel, eventID);
+=======
+			UploadFileParams ufp = new UploadFileParams(userID, lat, lon, alt, place, eventLabel,eventID);
+>>>>>>> .r395
+			int res = upload.uploadFile(file, events,ufp);
+
+			Bundle extras = intent.getExtras();
+			if (extras != null)
+			{
+				Messenger messenger = (Messenger) extras.get("MESSENGER");
+				Message msg = Message.obtain();
+				// Sucessful finished == Activity.RESULT_OK;
+				msg.arg1 = res;
+				try
+				{
+					messenger.send(msg);
+				}
+				catch (android.os.RemoteException e1)
+				{
+					Log.w(getClass().getName(), "Exception sending message", e1);
+				}
+
+			}
+
+		}
+
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+
+		}
+
+	}
+}
