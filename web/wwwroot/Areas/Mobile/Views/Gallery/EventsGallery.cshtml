@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PicApp1.Models.Event>
+
+@{
+    ViewBag.Title = "EventsGallery";
+    Layout = "~/Areas/Mobile/Views/Shared/_Layout.cshtml";
+}
+
+<div data-role="page"> 
+
+<div data-role="header">
+    <h1>PicAround</h1>
+</div> 
+<div data-role="content"> 
+
+
+<table>
+    <tr>
+       
+        <th>
+           
+        </th>
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="http://picaround.com/Mobile/Gallery?eventID=@item.EventId">@item.EventName</a>
+        </td>
+    </tr>
+}
+
+</table>
+<div data-role="footer">      
+
+</div>  
+</div>
+</div>

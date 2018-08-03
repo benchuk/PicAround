@@ -1,0 +1,34 @@
+﻿@model List<PicApp1.Models.GalleryModel>
+
+<div class="row">
+    <div class="span">
+        <h4 class="doubleline"><span>Most Popular</span></h4>
+       
+          
+       @foreach (var item in Model)
+       {
+         
+           <div class="featured-client">
+            <div class="fc-image">
+            <img src="@item.PictureLink" width="82" height="82" />
+            <div class="fc-caption">@item.EventName</div>
+            </div>
+            <strong>@item.EventPlace</strong><br />
+            <span>@item.EventTime.ToShortDateString()</span>
+            </div>
+           
+       }
+        
+       
+        @*<div class="featured-client">
+        <div class="fc-image">
+        <img src="http://picaround.com/UploadedImages/Small/Small_1339092582201.jpg" width="82" height="82" />
+        <div class="fc-caption">Guy's wedding</div>
+        </div>
+        <strong>Haifa Israel</strong><br />
+        <span>6-June-2012</span>
+        </div>	*@		
+			
+    </div>			
+							
+</div>

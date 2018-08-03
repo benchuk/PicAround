@@ -1,0 +1,15 @@
+﻿<div class='cssmenu1'>
+                <ul>
+                   <li><span>
+@if(Request.IsAuthenticated) {
+    <text>Welcome <strong>@User.Identity.Name</strong>!
+    @Html.ActionLink("Log Off", "LogOff", "Account")</text>
+}
+else {
+    @:@Html.ActionLink("Log On", "LogOn", "Account")
+}
+
+</span>
+</li>
+</ul>
+</div> 

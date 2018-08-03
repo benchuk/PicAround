@@ -1,0 +1,144 @@
+﻿@using PicApp1.Models
+@model List<PicApp1.Models.GalleryModel>
+@{
+    ViewBag.Title = "- The Social Camera!";
+}
+
+@section HeaderExt{
+
+    <meta property="og:title" content="PicAround - Location Based Shared Albums" />
+    <meta property="og:url" content="http://www.picaround.com" />
+    <meta property="og:image" content="http://www.picaround.com/Content/picaround_high_res.png" />
+    <meta property="og:site_name" content="PicAround" />
+    <meta property="og:description" content="PicAround - Location Based Shared Albums">
+
+}
+
+<div class="container" style="border: 0px solid black;">
+
+    <div class="hero-unit">
+        <h1>PicAround</h1>
+        <p>Location Based Shared Albums</p>
+        <p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.socialcamera.PicAround"
+                onclick="_gaq.push(['_trackEvent', 'DownloadToGooglePlayFromHomePage', 'NoramlSite', '1']);">
+                <img alt="Android app on Google Play" style="vertical-align: top; height: 41px; width: 125px;"
+                    src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+            </a>
+            <a href="https://itunes.apple.com/us/app/picaround-the-social-camera!/id662589744?mt=8&uo=4"
+                target="itunes_store" class="appleStyle"></a>
+            <img src="http://qr.kaywa.com/?l=1&s=4&d=http%3A%2F%2Fkaywa.me%2FQ8gus" alt="QRCode"
+                style="vertical-align: top; height: 41px; width: 41px;" />
+
+        </p>
+        <p>
+            <ul style="text-align: center;">
+                <li style="display: inline-block;">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                </li>
+                <li style="display: inline-block;">
+                    <div class="fb-follow" data-href="https://www.facebook.com/PicAround" data-layout="button_count"
+                        data-show-faces="false" data-width="450" style="vertical-align: central; line-height: 0px">
+                    </div>
+                </li>
+                <li style="display: inline-block;">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="wwwpicaround"
+                        data-hashtags="picaround">Tweet</a>
+                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="row-fluid">
+        <ul class="thumbnails">
+
+            <li class="span4">
+                <div class="thumbnail">
+                    <img data-src="../../Content/EventsAroundYou1.png" alt="300x200" style="width: 300px;"
+                        src="../../Content/EventsAroundYou1.png">
+                    <div class="caption">
+                        <h3>What is PicAround?</h3>
+                        <p>
+                            We think that if you went to the same <b>Place</b>
+                            At the same <b>Time</b> as other people
+                        You should have the same <b>picture album</b>
+                            so you can all see what happens <b>around you</b>
+                        @*<p style="text-align: center;">
+                            <small><b><a href="http://picaround.blob.core.windows.net/uploadedimages/PicAround.apk"
+                                onclick="_gaq.push(['_trackEvent', 'Download', 'MainPageSmallLink', '1']);">Try
+                                <cite title="PicAround">PicAround</cite>
+                            </a></b></small>
+                        </p>*@
+                        @* <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a>
+                        </p>*@
+                    </div>
+                </div>
+            </li>
+            <li class="span4">
+                <div class="thumbnail">
+                    <img data-src="../../Content/Gallery2.png" alt="300x200" style="width: 300px;"
+                        src="../../Content/Gallery2.png">
+                    <div class="caption">
+                        <h3 style="text-align: center;">Join The Rest.</h3>
+                        <h4 style="text-align: center;">Take Your Pictures!</h4>
+                        <p>
+                            <ul>
+                                <li>Select the event your are at from a list of local events.
+                                </li>
+                                <li>Capture the moment! 
+                                </li>
+                                Everybody’s pictures taken at the event will be saved to a shared album instantly!
+                            </ul>
+
+                        </p>
+                        <p>
+                        </p>
+                        @* <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a>
+                        </p>*@
+                    </div>
+                </div>
+            </li>
+            <li class="span4">
+                <div class="thumbnail">
+                    <img data-src="../../Content/SinglePhoto.png" alt="300x200" style="width: 300px;"
+                        src="../../Content/SinglePhoto.png">
+                    <div class="caption">
+                        <h3>Login with Facebook</h3>
+                        <p>
+
+                            <p style="text-align: center;">
+                                Join your freinds on Facebook  
+                      
+                            </p>
+                            <p style="text-align: center;">
+                                <button id="fb-authIntro" class="btn facebook" style="margin-top: 23px;" onclick="_gaq.push(['_trackEvent', 'loginoroutFacebookHomePage', 'NoramlSite', '1']);">
+                                    Login with
+                        Facebook</button>
+                                <iframe src="http://www.facebook.com/plugins/facepile.php?  app_id=360663317371353" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 200px;" allowtransparency="true"></iframe>
+                            </p>
+
+     <div class="fb-like-box" data-href="http://picaround.com" data-width="292" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+
+                        </p>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
+        _gaq.push(['_trackEvent', 'HomePageLoad', 'NoramlSite', '1']);
+    })();
+</script>

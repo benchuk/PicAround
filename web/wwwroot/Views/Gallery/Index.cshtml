@@ -1,0 +1,410 @@
+﻿@using PicApp1.Views.Utils
+@model  System.Collections.Generic.IList<PicApp1.Controllers.User>
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string eventName = ViewBag.EventName;
+    eventName = eventName.UppercaseFirst();
+}
+
+@section HeaderExt{
+    @*   <meta property="fb:app_id" content="360663317371353" />
+    <meta property="og:type" content="place" />
+    <meta property="og:description" content="PicAround - Location Based Shared Albumse">
+    <meta property="og:site_name" content="PicAround - Location Based Shared Albums" />
+    <meta property="og:title" content="@eventName" />
+    <meta property="og:url" content="@ViewBag.URL" />
+    <meta property="og:image" content="@ViewBag.Imageurl" />
+    <meta property="place:location:latitude"  content="@ViewBag.LocationLat"/>
+    <meta property="place:location:longitude" content="@ViewBag.LocationLon"/>*@
+    @*<meta property="place:location:altitude" content="42">*@
+
+    <meta property="og:title" content="@eventName" />
+    <meta property="og:url" content="@ViewBag.URL" />
+    <meta property="og:image" content="@ViewBag.Imageurl" />
+    <meta property="og:site_name" content="PicAround" />
+    <meta property="og:description" content="PicAround - Location Based Shared Albums">
+
+
+
+}
+
+<style>
+    header
+    {
+        margin-bottom: 30px;
+    }
+
+        header h1
+        {
+            font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        header a
+        {
+            color: orange;
+        }
+
+    .modal
+    {
+        color: #333;
+    }
+</style>
+
+
+
+
+
+<div class="container">
+
+    <div class="container" style="border: 0px solid black; padding: 0px; width: 50%;
+        margin: 0px auto;">
+        <div id="menuGallery" style="float: left; border: 0px solid black;"></div>
+
+        <h2 style="color: black; text-align: center;">@eventName</h2>
+
+    </div>
+
+    <div class="container">
+
+        <div id="mainGal" style="position: relative; text-align: left; float: left; border: 0px solid black;
+            min-height: 500px">
+            <h4>Photographers</h4>
+            <p>
+                <button id="start-slideshow" style="width: 100%" class="btn icon-play" data-slideshow="5000"
+                    data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">
+                    Start Slideshow
+                </button>
+            </p>
+
+            @foreach (var user in Model)
+            {
+                if (@user.UserId.Count() < 15)
+                {
+                <div style="margin: 15px">
+                    <a href="http://www.facebook.com/@user.UserId" target="_blank">
+                        <img src="http://graph.facebook.com/@user.UserId/picture?type=small"/>
+                    </a>
+                </div>
+                }
+                else
+                {
+                    <div style="margin: 15px">
+                    <a href="https://plus.google.com/@user.UserId" target="_blank">
+                        <img src="https://www.google.com/s2/photos/profile/@user.UserId"/>
+                    </a>
+                </div>
+                }
+            }
+            <p>
+
+                @*<p><button id="toggle-fullscreen" style="width:100%" class="btn btn-large btn-primary" data-toggle="button" >Toggle Fullscreen</button></p>*@
+            </p>
+        </div>
+        <div id="rightDiv" style="float: right; width: 80%; min-height: 500px">
+
+            <h4 style="text-align: left; padding-left: 20px">Gallery
+            </h4>
+
+            <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery"></div>
+        </div>
+
+
+    </div>
+    <div id="eventID" title="@ViewBag.EventID"></div>
+    <!-- modal-gallery is the modal dialog used for the image gallery -->
+    <div id="modal-gallery" class="modal modal-gallery hide fade">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <img src="../../Content/Images/picaround.png" style="width: 135px; height: 50px;
+                margin-right: 10px" />
+            <h3 class="modal-title"></h3>
+        </div>
+
+        <div class="modal-body">
+
+            @*left panel*@
+            <div class="well1">
+                <div class="fb-comments" data-num-posts="2" data-width="300"></div>
+            </div>
+            @*right panel*@
+            <div class="modal-image" style="float: right;"></div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <div style="text-align: left;"><b>Photo taken by:</b></div>
+            <div class="modal-userInfo" style="border: 0px solid black; text-align: left; min-width: 500px;
+                max-height: 65px; min-height: 65px">
+            </div>
+            <hr />
+
+            <a class="btn modal-download" target="_blank">
+                <i class="icon-download"></i>
+                <span>Download</span>
+            </a>
+            <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+                <i class="icon-play icon-white"></i>
+                <span>Slideshow</span>
+            </a>
+            <a class="btn btn-primary modal-prev">
+                <i class="icon-arrow-left icon-white"></i>
+                <span>Previous</span>
+            </a>
+            <a class="btn btn-primary modal-next">
+                <span>Next</span>
+                <i class="icon-arrow-right icon-white"></i>
+            </a>
+        </div>
+    </div>
+
+
+
+    <script>
+        /*jslint unparam: true */
+        /*global window, document, $ */
+        $(function () {
+            'use strict';
+
+            // Start slideshow button:
+            $('#start-slideshow').button().click(function () {
+                var options = $(this).data(),
+                modal = $(options.target),
+                data = modal.data('modal');
+                if (data) {
+                    $.extend(data.options, options);
+                } else {
+                    options = $.extend(modal.data(), options);
+                }
+                modal.find('.modal-slideshow').find('i')
+                .removeClass('icon-play')
+                .addClass('icon-pause');
+                modal.modal(options);
+            });
+
+            // Toggle fullscreen button:
+            $('#toggle-fullscreen').button().click(function () {
+                var button = $(this),
+                root = document.documentElement;
+                if (!button.hasClass('active')) {
+                    $('#modal-gallery').addClass('modal-fullscreen');
+                    if (root.webkitRequestFullScreen) {
+                        root.webkitRequestFullScreen(
+                        window.Element.ALLOW_KEYBOARD_INPUT
+                    );
+                    } else if (root.mozRequestFullScreen) {
+                        root.mozRequestFullScreen();
+                    }
+                } else {
+                    $('#modal-gallery').removeClass('modal-fullscreen');
+                    (document.webkitCancelFullScreen ||
+                    document.mozCancelFullScreen ||
+                    $.noop).apply(document);
+                }
+            });
+
+            var showFullGallery = '@ViewBag.ShowFullGallery';
+            var eventID = '@ViewBag.EventID';
+            if (showFullGallery == 'True') {
+
+                $.ajax({
+                    url: '/Home/GalleryAll',
+                    type: 'POST',
+                    traditional: true,
+                    dataType: "json",
+                    success: function (data) {
+                        var gallery = $('#gallery');
+                        gallery.prop('class', 'span');
+                        var urll;
+                        $.each(data, function (index, pic) {
+
+
+                            urll = 'http://picaround.blob.core.windows.net/' + pic.ThumbLink;
+
+
+                            var imagepath;
+
+                            imagepath = 'http://picaround.blob.core.windows.net/' + pic.MidQLink;
+
+
+                            var client = $("<div class='featured-client'></div>");
+                            var divMain = $("<div class='fc-image'></div>");
+
+                            var image = $("<img class='img-circle' width=82 height=82 />");
+
+                            var cssObj = {
+
+                                'background-image': 'url(' + urll + ')',
+                                'background-position': '0px 0px'
+                            };
+
+                            divMain.css(cssObj);
+
+                            image.appendTo(divMain);
+
+
+                            var facebookUser = "";
+                            $.ajax({
+                                url: 'https://graph.facebook.com/' + userId,
+                                type: 'GET',
+                                //data: data,
+                                dataType: 'json',
+                                success: function (data) {
+                                    facebookUser = data.name;
+                                    var divCaption = $("<div class='fc-caption'>" + facebookUser + "</div>");
+                                    divCaption.appendTo(divMain);
+                                },
+                                error: function (data) {
+                                var userNameUrl = "http://www.picaround.com/gpproxy/GetGooglePlusUserName?userid=" + userId;
+                                    //alert(userNameUrl);
+                                $.ajax({
+                                    url: userNameUrl,
+                                    type: 'GET',
+                                    success: function (data) {//Data is the user name
+                                        //alert(data);
+                                        //var imgSrc = 'https://www.google.com/s2/photos/profile/' + userAppid;
+                                        //alert(imgSrc);
+                                        //var pagePlus = "https://plus.google.com/" + userAppid;
+                                        //var imgLink = '<img border=0 src=' + imgSrc + ' />';
+                                        //modal.find('.modal-userInfo').html("<a href=" + pagePlus + ">" + imgLink + " " + data + "</a>");
+                                        var divCaption = $("<div class='fc-caption'>" + data + "</div>");
+                                        divCaption.appendTo(divMain);
+                                    },
+                                    error: function (xhr, status) {
+                                        //alert(xhr.status);
+                                    }
+                                });
+
+                            }
+
+                            });
+
+
+
+                            divMain.appendTo(client);
+                            $('<a rel="gallery" />')
+                                .append(client)
+
+                                .prop('href', imagepath)
+                                .prop('title', pic.Description)
+                                .appendTo(gallery);
+                        });
+
+                    }
+                });
+            }
+            else {
+
+                $.ajax({
+                    url: '/Home/GalleryByEventId',
+                    type: 'POST',
+                    traditional: true,
+                    dataType: "json",
+                    data: { 'id': eventID },
+                    success: function (data) {
+
+                        var gallery = $('#gallery');
+                        gallery.prop('class', 'span');
+
+
+                        var urll;
+                        var userId;
+                        $.each(data, function (index, pic) {
+
+                            urll = 'http://picaround.blob.core.windows.net/' + pic.ThumbLink;
+
+
+                            userId = pic.UserId;
+                           
+                            var imagepath;
+
+                            imagepath = 'http://picaround.blob.core.windows.net/' + pic.MidQLink;
+
+
+                            var client = $("<div class='featured-client'></div>");
+                            var divMain = $("<div class='fc-image'></div>");
+
+                            var image = $("<img class='img-circle' width=82 height=82 />");
+
+                            var cssObj = {
+
+                                'background-image': 'url(' + urll + ')',
+                                'background-position': '0px 0px'
+                            };
+
+                            divMain.css(cssObj);
+
+                            image.appendTo(divMain);
+
+                            var facebookUser = "";
+                            var func = function(){
+                                var localid = userId;
+                                $.ajax({
+                                    url: 'https://graph.facebook.com/' + localid,
+                                    type: 'GET',
+                                    //data: data,
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        facebookUser = data.first_name;
+                                        var divCaption = $("<div class='fc-caption'>" + facebookUser + "</div>");
+                                        divCaption.appendTo(divMain);
+                                    },
+                                    error: function (xhr, status)  {
+                                        var userNameUrl = "http://www.picaround.com/gpproxy/GetGooglePlusUserName?userid=" + localid;
+                                        //alert(userNameUrl);
+                                        $.ajax({
+                                            url: userNameUrl,
+                                            type: 'GET',
+                                            success: function (data) {
+                                                var firstNameOnly = data.substring(0, data.indexOf(' '));
+                                                var divCaption = $("<div class='fc-caption'>" + firstNameOnly + "</div>");
+                                                divCaption.appendTo(divMain);
+                                            },
+                                            error: function (xhr, status) {
+                                                //alert(xhr.status);
+
+                                                var userNameUrl = "http://picaround.com/gpproxy/GetGooglePlusUserName?userid=" + localid;
+                                                //alert(userNameUrl);
+                                                $.ajax({
+                                                    url: userNameUrl,
+                                                    type: 'GET',
+                                                    success: function (data) {
+                                                        var firstNameOnly = data.substring(0, data.indexOf(' '));
+                                                        var divCaption = $("<div class='fc-caption'>" + firstNameOnly + "</div>");
+                                                        divCaption.appendTo(divMain);
+                                                    },
+                                                    error: function (xhr, status) {
+                                                        //alert(xhr.status);
+                                                    }
+                                                });
+                                            }
+                                        });
+
+                                    }
+                                });
+                            };
+                            func();
+                            divMain.appendTo(client);
+                            $('<a rel="gallery" />')
+                                .append(client)
+
+                                .prop('href', imagepath)
+                                .prop('title', pic.Description)
+                                .prop('userInfo', userId)
+                                .appendTo(gallery);
+                        });
+                    }
+                });
+            }
+
+            if (typeof String.prototype.startsWith != 'function') {
+                String.prototype.startsWith = function (str) {
+                    return this.indexOf(str) == 0;
+                };
+            }
+        });
+    </script>

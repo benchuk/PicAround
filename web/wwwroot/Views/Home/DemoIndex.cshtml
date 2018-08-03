@@ -1,0 +1,56 @@
+﻿@model PicApp1.Models.Events
+
+@using PicApp1.Models;
+
+@{
+    ViewBag.Title = "DemoIndex";
+}
+<script src="../../Scripts/Rad/rad.min.js" type="text/javascript"></script>
+<link href="../../Scripts/Rad/RadCss.css" rel="stylesheet" type="text/css" />
+<h2 style="text-align: center">Select an event</h2>
+
+<div id='radial_container'>
+	<ul class='list'>
+		@foreach (FeederEvent fEvent in Model.GetAllEvents())
+        {
+            <li class="item">
+                <a href="../Gallery/GalleryByEventId?eventId=@fEvent.GetEventId()">
+                    <div class="my_class">
+                        <img src="http://picaround.com/@fEvent.GetEventPicture().ThumbLink"/>
+                    </div>
+                </a>
+                 
+            </li>
+      <span class="eNames">@fEvent.GetEventName()</span>
+        }
+	</ul>
+</div>
+
+
+<script>
+   
+    $("#radial_container").radmenu({
+        listClass: 'list', // the list class to look within for items
+        itemClass: 'item', // the items - NOTE: the HTML inside the item is copied into the menu item
+        radius: 100, // radius in pixels
+        animSpeed: 400, // animation speed in millis
+        centerX: 30, // the center x axis offset
+        centerY: 100, // the center y axis offset
+        initialScale:1.5,
+        selectEvent: "click", // the select event (click)
+        onSelect: function ($selected) { // show what is returned 
+            
+        },
+        angleOffset: 0 // in degrees
+    }).radmenu("show");
+
+    $(".list").children("li").each(function (i) {
+        $(this).children("img").mouseover(function() {
+            alert($(this));
+        });
+    });
+ 
+    
+   
+
+</script>

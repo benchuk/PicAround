@@ -1,0 +1,124 @@
+﻿@model List<PicApp1.Models.Pic>
+<script type="text/javascript">
+    /*
+     * IMPORTANT!!!
+     * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+     * If you don't this will mess with how jQuery Mobile works
+     */
+
+    (function (window, $, PhotoSwipe) {
+
+        $(document).ready(function () {
+
+            var options = {};
+            $("ul.gallery a").photoSwipe(options);
+
+            //$('div.gallery-page')
+            //    .live('pageshow', function (e) {
+
+            //        var
+            //            currentPage = $(e.target),
+            //            options = {},
+            //            photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options, currentPage.attr('id'));
+
+            //        return true;
+
+            //    })
+
+            //    .live('pagehide', function (e) {
+
+            //        var
+            //            currentPage = $(e.target),
+            //            photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+            //        if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+            //            PhotoSwipe.detatch(photoSwipeInstance);
+            //        }
+
+            //        return true;
+
+            //    });
+
+        });
+
+    }(window, window.jQuery, window.Code.PhotoSwipe));
+
+</script>
+<div data-role="page" class="gallery-page ui-page ui-body-c ui-page-active" id="Gallery3">
+
+    <div data-role="header">
+        <p>
+            <img class="logo" src="@Url.Content("~/Content/Images/picaround.png")"  style="height:80px; vertical-align:central;text-align:center; display: block; margin-left: auto;margin-right: auto"/>
+        </p>
+    </div>
+    <div data-role="content" class="ui-content" role="main">
+        
+        <h1 style="text-align: center">
+            <h2 style="text-align: center;">PicAround</h2>
+            <p style="text-align: center;">Location Based Shared Albums</p>
+            <p>
+
+                <a href="https://play.google.com/store/apps/details?id=com.socialcamera.PicAround"
+                    onclick="_gaq.push(['_trackEvent', 'DownloadToGooglePlayFromHomePage', 'NoramlSite', '1']);">
+                    <img alt="Android app on Google Play" style="vertical-align: top; height: 41px; width: 125px;"
+                        src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+                </a>
+                <a href="https://itunes.apple.com/us/app/picaround-the-social-camera!/id662589744?mt=8&uo=4"
+                    target="itunes_store" class="appleStyle"></a>
+            </p>
+        </h1>
+        <h3 style="text-align: center;">@ViewBag.EventName</h3>
+        <h4 style="text-align: center;">@ViewBag.LocationName</h4>
+
+
+        @*  @if (Model.FirstOrDefault() =! null)
+                    {
+                        <h1>@Model.FirstOrDefault().Event.EventName</h1>
+                    }*@
+        <ul class="gallery">
+
+
+            @foreach (var pic in Model)
+            {
+                <li>
+                    <a href="http://picaround.blob.core.windows.net/@pic.MidQLink" rel="external" class="ui-link">
+                        <img src="http://picaround.blob.core.windows.net/@pic.ThumbLink" alt="@ViewBag.EventName -  @pic.Description"/>
+                    </a>
+                </li>     
+                    
+            }
+        </ul>
+
+        <div data-role="footer">
+            <a href="http://picaround.com?forceDesktop=true">Desktop view</a>
+
+            
+             <p> 
+             <ul style="text-align: center;">
+                 <li style="display: inline-block;">
+                     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+            <div class="g-plus" data-action="share" data-annotation="bubble"> </div>
+                     </li>
+                  <li  style="display: inline-block;">
+                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="20" data-show-faces="false"></div>
+                      </li>
+               <li  style="display: inline-block;">
+                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="wwwpicaround" data-hashtags="picaround">Tweet</a>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                   </li>
+            </ul>
+        </p>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=360663317371353";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div data-role="page">
+    <div data-role="header">
+        <p>
+            <img class="logo" src="@Url.Content("~/Content/Images/picaround.png")"  style="height:80px; vertical-align:central;text-align:center; display: block; margin-left: auto;margin-right: auto"/>
+        </p>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            @*  <li>@Html.Partial("_LogOnPartial")</li>*@
+            @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+            @*<li><a href="/Mobile/Home">Home</a></li>
+            <li><a href="/Mobile/map">Map</a></li>*@
+            <li><a href="/Mobile/Gallery/Gal">All Galleries</a></li>
+            @*<li>@Html.ActionLink("Map", "Index", "Map")</li>                    *@
+            @*<li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>*@
+        </ul>
+    </div>
+    <div data-role="footer">
+        <a href="http://picaround.com?forceDesktop=true">Desktop view</a>
+    </div>
+</div>

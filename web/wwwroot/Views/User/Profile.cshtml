@@ -1,0 +1,31 @@
+﻿@using PicApp1.Models
+@model List<UserEventByLocationsResult>
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@foreach (var item in Model)
+{
+    <hr />
+    <p>
+        <h2>@item.EventKey.LocationName</h2>
+
+        @foreach (var i in item.Events.ToList())
+        {
+           <a href="/Gallery/GalleryByEventId?eventId=@i.EventId">
+            <b>Event Name: </b>@i.EventName
+           <div>
+               <img src="http://picaround.blob.core.windows.net/@i.EventPictureLink"/>
+           </div>
+               </a>
+        }
+
+    </p>
+}
+
+
+

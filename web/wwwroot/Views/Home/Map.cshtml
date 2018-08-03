@@ -1,0 +1,212 @@
+﻿@model List<PicApp1.Models.Pic>
+@{
+    ViewBag.Title = "Map";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html
+        {
+            height: 100%;
+        }
+        body
+        {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map_canvas
+        {
+            height: 1000px;
+        }
+    </style>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        function initialize() {
+
+       
+            var latlng = new google.maps.LatLng(32.77647, 35.01023);
+            var myOptions = {
+                zoom: 8,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+
+             
+         @foreach (var item in Model)
+         {
+    <text>
+      var markerlatLng@(item.PicId) = new google.maps.LatLng(@(item.Location.Lat), @(item.Location.Long));
+      var title = '@(item.Description)';
+      var description = '@(item.DateTaken)';
+            var contentString = '<div style="width: 450px; height:450px"><h3>' + title + '</h3>' + '<p>' + description + '</p>' + '<img height="250px" width="250px" src="http://picaround.blob.core.windows.net/@(item.MidQLink)"/></div>'
+
+            var infowindow@(item.PicId) = new google.maps.InfoWindow({
+                content: contentString,   
+      });
+
+      var marker@(item.PicId) = new google.maps.Marker({
+          position: markerlatLng@(item.PicId),
+          title: title,
+          map: map,
+          draggable: false
+      });
+
+      google.maps.event.addListener(marker@(item.PicId), 'click', function () {
+          infowindow@(item.PicId).open(map, marker@(item.PicId));
+      });
+
+   </text>
+         }
+
+            // Try W3C Geolocation (Preferred)
+            if (navigator.geolocation) {
+
+                browserSupportFlag = true;
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    var image = 'http://picaround.com/images/Google-Maps-icon.png';
+
+                    var beachMarker = new google.maps.Marker({
+                        position: initialLocation,
+                        map: map,
+                        icon: image
+                    });
+                    map.setCenter(initialLocation);
+                }, function () {
+                    handleNoGeolocation(browserSupportFlag);
+                });
+                // Try Google Gears Geolocation
+            } else if (google.gears) {
+
+                browserSupportFlag = true;
+                var geo = google.gears.factory.create('beta.geolocation');
+                geo.getCurrentPosition(function (position) {
+                    initialLocation = new google.maps.LatLng(position.latitude, position.longitude);
+                    map.setCenter(initialLocation);
+                }, function () {
+                    handleNoGeoLocation(browserSupportFlag);
+                });
+                // Browser doesn't support Geolocation
+            } else {
+                browserSupportFlag = false;
+                handleNoGeolocation(browserSupportFlag);
+            }
+
+            function handleNoGeolocation(errorFlag) {
+                if (errorFlag == true) {
+                    alert("Geolocation service failed.");
+                    initialLocation = newyork;
+                } else {
+                    alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+                    initialLocation = siberia;
+                }
+                map.setCenter(initialLocation);
+            }
+
+          
+        
+
+            return map;
+
+        }
+
+
+
+        function mapThings() {
+         
+         @foreach (var item in Model)
+         {
+    <text>
+      var markerlatLng = new google.maps.LatLng(@(item.Location.Lat), @(item.Location.Long));
+      var title = '@(item.Description)';
+      var description = '@(item.Description)';
+      var contentString = '<h3>' + title + '</h3>' + '<p>' + description + '</p>'
+
+      var infowindow = new google.maps.InfoWindow({
+          content: contentString
+      });
+
+      var marker = new google.maps.Marker({
+          position: latLng,
+          title: title,
+          map: map,
+          draggable: false
+      });
+
+      google.maps.event.addListener(marker, 'click', function () {
+          infowindow.open(map, marker);
+      });
+
+   </text>
+         }
+
+
+
+        }
+
+
+        var global_map;
+        var delay = 200;
+        $(document).ready(function () {
+            global_map = initialize();
+            mapThings();
+        });
+
+
+
+        function toggleBounce() {
+
+            if (marker.getAnimation() != null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
+        //function StartTheTimer()
+        //{
+        //	var element = document.getElementById('myText');
+        //	element.innerHTML = element.innerHTML + "test</br>";
+        //	setTimeout("StartTheTimer()", delay)
+        //}
+
+
+        /**
+        * Handles click events on a map, and adds a new point to the Polyline
+        */
+        function addLatLng(event) {
+
+            var path = poly.getPath();
+
+            // Because path is an MVCArray, we can simply append a new coordinate
+            // and it will automatically appear
+            path.push(event.latLng);
+
+            // Add a new marker at the new plotted point on the polyline.
+            var marker = new google.maps.Marker({
+                position: event.latLng,
+                title: '#' + path.getLength(),
+                map: map
+            });
+        }
+  
+
+    </script>
+</head>
+<body onload="">
+    <div id="map_canvas" style="width: 100%;">
+    </div>
+    <div id="myText">
+    </div>
+</body>
+</html>

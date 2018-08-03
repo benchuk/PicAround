@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderExt{
+    <meta content="PicAround - Location Based Shared Albums" property="og:title">
+    @*<meta content="http://a5.mzstatic.com/us/r1000/054/Purple4/v4/4e/c3/64/4ec36433-96ec-e0a3-0e6d-8d1f282f1a1c/V4HttpAssetRepositoryClient-mzl.iagffbgj.png-7704209425711091936.png"*@
+    <meta content="http://picaround.com/Content/icon.png" property="og:image">
+    <meta content="image/png" property="og:image:type">
+}
+
+<div class="hero-unit">
+    <h1>PicAround</h1>
+    <p>Location Based Shared Albums</p>
+    <p>
+
+        <a href="https://play.google.com/store/apps/details?id=com.socialcamera.PicAround"
+            onclick="_gaq.push(['_trackEvent', 'DownloadToGooglePlayFromHomePage', 'NoramlSite', '1']);">
+            <img alt="Android app on Google Play" style="vertical-align: top; height: 41px; width: 125px;"
+                src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+        </a>
+        <a href="https://itunes.apple.com/us/app/picaround-the-social-camera!/id662589744?mt=8&uo=4"
+            target="itunes_store" class="appleStyle"></a>
+    </p>
+</div>

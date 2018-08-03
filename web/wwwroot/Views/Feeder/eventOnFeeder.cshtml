@@ -1,0 +1,61 @@
+﻿@model PicApp1.Models.FeederEvent
+<div style="margin: 0 auto; width: 634px; height: 120px;">
+    <!-- "previous page" action -->
+    <a class="prev browse left"></a>
+    <!-- root element for scrollable -->
+    
+    <div class="scrollable" >
+        <!-- root element for the items -->
+        <div class="items">
+            <!-- 1-5 -->
+            <div class="ones">
+                @foreach (PicApp1.Models.Pic p in Model.GetAllPictures())
+                {
+                    if (p.PicId % 3 == 0)
+                    {
+                    <a href="#">
+                        <img src="http://picaround.com/@p.ThumbLink"/>
+                    </a>
+                    }
+                }
+            </div>
+            <!-- 5-10 -->
+            <div class="twos">
+                @foreach (PicApp1.Models.Pic p in Model.GetAllPictures())
+                {
+                    if (p.PicId % 3 == 1)
+                    {
+                    <a href="#">
+                        <img src="http://picaround.com/@p.ThumbLink"/>
+                    </a>
+                    }
+                }
+            </div>
+            <!-- 10-15 -->
+            <div class="threes">
+                @foreach (PicApp1.Models.Pic p in Model.GetAllPictures())
+                {
+                    if (p.PicId % 3 == 2)
+                    {
+                    <a href="#">
+                        <img src="http://picaround.com/@p.ThumbLink"/>
+                    </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!-- "next page" action -->
+    <a class="next browse right"></a>
+    <div style="border: 1px solid black;width: 100px;height: 100px;">
+        hey
+        <br/>
+        good
+    </div>
+</div>
+
+<script>    $(function () {
+                    // initialize scrollable
+                    $(".scrollable").scrollable();
+                });
+</script>

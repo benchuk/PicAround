@@ -1,0 +1,27 @@
+﻿ @{
+        PicApp1.Models.PicUpModel db = new PicApp1.Models.PicUpModel();
+        var date =  DateTime.Now.AddDays(-3);
+        var pics = db.Pics.Where(p => p.DateTaken > date);
+ }
+ <div id="bg">
+       <div class="fp_overlay">
+        </div>
+        @foreach (var pic in pics)
+        {
+            <div class="bgimg">
+            <img src="@pic.Link" width="100%" height="100%" alt=""/>
+        </div> 
+        } 
+ </div>       
+
+     <script>
+         $("#bg>.bgimg:gt(0)").hide();
+         setInterval(function () {
+             var element = $("#bg>.bgimg:first");
+             element.fadeOut('slow', function () {
+                 // Animation complete.
+             });
+             element.next().fadeIn(1000).end().appendTo($("#bg"))
+         }, 3000);
+        
+    </script>

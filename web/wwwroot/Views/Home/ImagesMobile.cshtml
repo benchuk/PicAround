@@ -1,0 +1,9 @@
+﻿@model List<PicApp1.Models.Pic>
+
+<h2>ImagesMobile</h2>
+
+
+@foreach (var image in Model)
+{
+    <img src="@image.ThumbLink" style="width:250px;height:200px;" />
+}

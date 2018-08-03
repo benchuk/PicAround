@@ -1,0 +1,27 @@
+﻿@model List<PicApp1.Models.Pic>
+
+    <script src="../../Content/Gallery/galleryTemp.js" type="text/javascript"></script>
+    <link href="../../Content/Gallery/css/style.css" rel="stylesheet" type="text/css" />
+
+<div class="Topbar">
+    @Model[0].Event.Name <span id="descriptionTop"></span><span id="loadingTop"></span>
+</div>
+<div id="thumbsWrapper">
+    <div id="content">
+        @foreach (var pic in Model)
+        {
+            <img src="@pic.ThumbLink" alt="@pic.Link" title="@pic.DateTaken" description="@pic.Description"/>
+        }
+        <div class="placeholder">
+        </div>
+    </div>
+</div>
+<div class="infobar">
+    <span id="description"></span><span id="loading">Loading Image</span> 
+</div>
+<div id="panel">
+    <div id="wrapper">
+    <div id="commentholder"></div>
+        <a id="prev"></a><a id="next"></a>
+    </div>
+</div>

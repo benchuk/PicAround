@@ -1,0 +1,88 @@
+﻿<script type="text/javascript" src="/scripts/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/scripts/js/verticaltabs.pack.js"></script> <!--http://dean.edwards.name/packer/-->
+<link rel="stylesheet" href="/Content/verticaltabs.css" />
+
+<link href="/Content/searchfield.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="/scripts/js/searchfield.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#textExample").verticaltabs({ speed: 500, slideShow: false, activeIndex: 2 });
+        $("#imageExample").verticaltabs({ speed: 1000, slideShow: true, slideShowSpeed: 3000, activeIndex: 0, playPausePos: "topRight" });
+    });
+</script>
+
+<style>
+form{
+	margin:1em 0;
+	padding:0;
+	width:368px;
+	height:185px;
+	background:url(/Content/images/form_back.gif) no-repeat 0 0;
+}
+
+form p{
+	margin:0 40px;
+}
+
+form input{
+	margin-top:80px;	
+	width:200px;
+	border:none;
+	padding:3px;
+	font-size:110%;
+	vertical-align:middle;
+}
+
+form button{
+	margin-top:80px;
+	margin-left:10px;
+	width:53px;
+	height:30px;
+	border:none;
+	text-indent:-8000px;
+	overflow:hidden;
+	background:url(/Content/images/button.gif) no-repeat 0 0;
+	cursor:pointer;
+	vertical-align:middle;
+}
+
+</style>
+    
+    
+    
+	<div class="verticalslider" id="textExample">
+        <ul class="verticalslider_tabs">
+            <li><a href="#">TEXT</a></li>
+            <li><a href="#">MAP</a></li>
+            <li><a href="#">DATE</a></li>
+            <li><a href="#">USER NAME</a></li>                        
+        </ul>
+        <ul class="verticalslider_contents">
+            <li>
+            <h2>Search any...</h2>
+            <p>
+                        <form id="searchform" action="" method="post">
+
+			        <p><input type="text" id="searchfield" name="searchfield" value="" />
+
+			        <button type="submit" id="searcbutton">Go</button></p>
+
+		        </form>
+
+            </p>
+            
+            </li>
+            <li>
+            <h2>Praesent Pulvinar</h2>
+            <p>Praesent pulvinar, lorem nec ullamcorper semper, ipsum erat vestibulum lacus, in sodales lorem mi in leo. Vestibulum et rhoncus tellus. Curabitur mauris enim, vehicula sit amet euismod a, eleifend at dui. Vivamus sollicitudin, nunc pharetra porttitor lobortis, felis odio hendrerit mi, id ultricies urna enim quis lectus. Suspendisse convallis ipsum egestas velit fermentum ac volutpat dui dictum. Pellentesque sed ultrices justo. Ut lacus odio, porttitor quis tincidunt at, imperdiet vel eros. Duis ac velit neque. Integer semper egestas odio id suscipit. Maecenas eu diam in urna fringilla viverra eget sit amet ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+            <li>
+            <h2>Nunc Adipiscing</h2>
+            <p>Nunc adipiscing purus id orci rutrum placerat. Nam posuere elementum ipsum quis faucibus. Fusce fermentum turpis ac erat mollis sit amet varius mi placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ante justo, varius quis dignissim nec, condimentum in dui. Nulla sed lectus eu nunc vehicula vulputate vel nec velit. Integer eu purus nunc. Donec odio augue, sagittis pellentesque adipiscing id, dignissim vel enim. Maecenas a risus est.</p></li>
+            <li>
+            <h2>Praesent Dapibus</h2>
+            <p>Praesent dapibus metus vitae velit blandit tempor. Donec dignissim tempus neque, a vestibulum massa aliquam sed. Vestibulum velit quam, facilisis vel pharetra nec, bibendum eget mauris. In vitae ligula ac justo varius ullamcorper. Nullam vitae urna eu metus pellentesque vehicula vel sit amet nibh. Cras nec velit dictum neque imperdiet congue in nec eros. Suspendisse ante felis, eleifend sed pellentesque id, sagittis ut magna. .</p></li>                        
+        </ul>
+    </div> 

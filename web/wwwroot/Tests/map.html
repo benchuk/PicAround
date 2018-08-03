@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map_canvas { height: 100% }
+</style>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        function initialize() {
+
+            var latlng = new google.maps.LatLng(32.77647, 35.01023);
+            var myOptions = {
+                zoom: 8,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            // Try W3C Geolocation (Preferred)
+            if (navigator.geolocation) {
+
+                browserSupportFlag = true;
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    var image = 'http://picaround.com/images/Google-Maps-icon.png';
+
+                    var beachMarker = new google.maps.Marker({
+                        position: initialLocation,
+                        map: map,
+                        icon: image
+                    });
+                    map.setCenter(initialLocation);
+                }, function () {
+                    handleNoGeolocation(browserSupportFlag);
+                });
+                // Try Google Gears Geolocation
+            } else if (google.gears) {
+
+                browserSupportFlag = true;
+                var geo = google.gears.factory.create('beta.geolocation');
+                geo.getCurrentPosition(function (position) {
+                    initialLocation = new google.maps.LatLng(position.latitude, position.longitude);
+                    map.setCenter(initialLocation);
+                }, function () {
+                    handleNoGeoLocation(browserSupportFlag);
+                });
+                // Browser doesn't support Geolocation
+            } else {
+                browserSupportFlag = false;
+                handleNoGeolocation(browserSupportFlag);
+            }
+
+            function handleNoGeolocation(errorFlag) {
+                if (errorFlag == true) {
+                    alert("Geolocation service failed.");
+                    initialLocation = newyork;
+                } else {
+                    alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+                    initialLocation = siberia;
+                }
+                map.setCenter(initialLocation);
+            }
+
+
+            return map;
+
+        }
+
+ 
+
+        function mapThings() {
+
+            latlngP = new google.maps.LatLng(32.77647, 35.01023);
+
+
+            marker = new google.maps.Marker({
+                map: global_map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                position: latlngP
+            });
+
+            google.maps.event.addListener(marker, 'click', toggleBounce);
+
+     
+        }
+
+
+        var global_map;
+        var delay = 200;
+        $(document).ready(function () {
+            global_map = initialize();
+            mapThings();
+        });
+
+
+
+        function toggleBounce() {
+
+            if (marker.getAnimation() != null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
+        //function StartTheTimer()
+        //{
+        //	var element = document.getElementById('myText');
+        //	element.innerHTML = element.innerHTML + "test</br>";
+        //	setTimeout("StartTheTimer()", delay)
+        //}
+
+
+        /**
+        * Handles click events on a map, and adds a new point to the Polyline.
+        * @param {MouseEvent} mouseEvent
+        */
+        function addLatLng(event) {
+
+            var path = poly.getPath();
+
+            // Because path is an MVCArray, we can simply append a new coordinate
+            // and it will automatically appear
+            path.push(event.latLng);
+
+            // Add a new marker at the new plotted point on the polyline.
+            var marker = new google.maps.Marker({
+                position: event.latLng,
+                title: '#' + path.getLength(),
+                map: map
+            });
+        }
+  
+
+    </script>
+</head>
+<body onload="">
+    <div id="map_canvas" style="width: 100%; height: 100%">
+    </div>
+    <div id="myText">
+    </div>
+</body>
+</html>

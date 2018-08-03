@@ -1,0 +1,9 @@
+﻿@model List<PicApp1.Models.Pic>
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@Html.Partial("GalleryControl", Model)
+

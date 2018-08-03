@@ -1,0 +1,49 @@
+﻿/* HTML ELEMENTS */
+
+
+a:hover 
+{
+	text-decoration:none;
+}
+
+.searchImg
+{
+	height:60px;
+}
+.searchEventName
+{
+	margin:5px;
+}
+
+#searchform div
+{
+    color: Black;
+	background-color:#c1c1c1;
+}
+#searchform div input
+{
+    font-size: 12px;
+    width: 230px;
+}
+#suggestions
+{
+	max-height:600px;
+    position: absolute;
+    width: 320px;
+    display: none;
+    z-index: 99;
+	background-color:white;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.panel
+{
+	background-color:whitesmoke;
+	text-align:center;
+}
+
+#ajaxLoader
+{
+    visibility: hidden;
+}

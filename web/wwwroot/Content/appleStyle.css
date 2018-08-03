@@ -1,0 +1,23 @@
+﻿.appleStyle
+{
+	display: inline-block;
+	overflow: hidden;
+	background: url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.png) no-repeat;
+	width: 135px;
+	height: 40px;
+
+	@media only screen
+	{
+		background-image:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.svg);
+	}
+}
+
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
+    display: none !important;
+}
+
+.fb-like{
+    height: 20px;
+    overflow: hidden;
+}

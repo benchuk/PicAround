@@ -1,0 +1,150 @@
+#mainWrapper{
+	margin: 0;
+	padding: 0;
+}
+#headerWrapper{
+	width:100%;
+	height: 100px;
+	background-color: aqua;
+	z-index: 0;
+	position: absolute;
+	border: 1px solid black;
+}
+#logo{
+	width:60px;
+	height: 60px;
+	background-color: blue;
+	z-index: 1;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+}
+
+#headerCenter{
+	width: 600px;
+	height: 80%;
+	border: 1px solid black;
+	z-index: 1;
+	position: absolute;
+	left: 85px;
+	top: 10px;
+}
+#albumsDetails{
+	width: 550px;
+	height: 50%;
+	background-color:fuchsia;
+	margin-left: auto;
+	margin-right: auto; 
+}
+#filtersHolder{
+	width: 550px;
+	height: 50%;
+	background-color:green;
+	margin-left: auto;
+	margin-right: auto; 
+}							
+#loginDetails{
+	width: 100px;
+	height: 80%;
+	border: 1px solid black;
+	z-index: 1;
+	position: absolute;
+	left: 700px;
+	top: 10px;
+
+}			
+#centralImageWrapper{
+	height: 400px;
+	width: 100%;
+	background-color: gray;
+	top:100px;
+	z-index: 4;
+	border: 1px solid black;
+	position: absolute;
+}
+#centralImageHolder{
+}
+#centralImageNavigation{
+}
+#footerWrapper{
+	width: 100%;
+	height: 150px;
+	border: 1px solid black;
+	z-index: 0;
+	top:500px;
+	background-color: green;
+	position: absolute;
+	
+}
+#timeLineHolder{
+}
+#imagesHolder{
+}
+			
+			
+.pe-thumbs{
+    width: 900px;
+    height: 600px;
+    margin: 20px auto;
+    position: relative;
+    background: transparent url(../images/3.jpg) top center;
+    border: 5px solid #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+			
+.pe-thumbs:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,102,0,0.2);
+}
+
+.pe-thumbs li{
+    float: left;
+    position: relative;
+}
+.pe-thumbs li a,
+.pe-thumbs li a img{
+    display: block;
+    position: relative;
+}
+
+.pe-thumbs li a img{
+    width: 100px;
+	height: 100px;
+    opacity: 0.2;
+}
+
+.pe-thumbs li a div.pe-description{
+    width: 200px;
+    height: 100px;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    color: white;
+    display: none;
+    z-index: 1001;
+    text-align: left;
+}
+
+.pe-description h3{
+    padding: 10px 10px 0px 10px;
+    line-height: 20px;
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    margin: 0px;
+}
+.pe-description p{
+    padding: 10px 0px;
+    margin: 10px;
+    font-size: 11px;
+    font-style: italic;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+

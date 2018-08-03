@@ -1,0 +1,29 @@
+﻿@model PicApp1.Models.Events
+
+@using PicApp1.Models;
+
+@{
+    ViewBag.Title = "Feeder";
+}
+         <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="../../Scripts/Feeder/jquery.tools.min.js" type="text/javascript"></script>
+
+<link href="../../Content/Feeder/FeederCss.css" rel="stylesheet"
+    type="text/css"/>
+<h2>
+    Feeder</h2>
+<script>
+  
+</script>
+@foreach (FeederEvent item in Model.GetAllEvents())
+{
+    if (item.GetNumberOfPicturesInEvent() >= 12)
+    {
+        Html.RenderPartial("../Feeder/eventOnFeeder", item);
+        <br/>
+    }
+}
+<script>    $(function () {
+        // initialize scrollable
+        $(".scrollable").scrollable();
+    }); </script>
