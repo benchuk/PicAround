@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DBScripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="benchuk.no-ip.info\SQLEXPRESS:benchuk">
+          <Created>2012-06-15T22:07:39.4982058+03:00</Created>
+          <Type>SQL</Type>
+          <Server>benchuk.no-ip.info\SQLEXPRESS</Server>
+          <UserName>benchuk</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="BENDEV-PC\SQLEXPRESS:BenDev-PC\BenDev">
+          <Created>2012-05-14T00:14:08.7362834+03:00</Created>
+          <Type>SQL</Type>
+          <Server>BENDEV-PC\SQLEXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="AttacheToDB.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:BENDEV-PC\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>BENDEV-PC\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>AttacheToDB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Copy Images link.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>Copy Images link.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CopyGPSDATAFromLocationToPics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>CopyGPSDATAFromLocationToPics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="copylocation.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>copylocation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="IsLocationExistProc.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>IsLocationExistProc.sql</FullPath>
+        </FileNode>
+        <FileNode Name="OLDTriggerGeo.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:BENDEV-PC\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>BENDEV-PC\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>OLDTriggerGeo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PIC_GeoLocationTrigger.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>PIC_GeoLocationTrigger.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Pics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>Pics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Trigger.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:BENDEV-PC\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>BENDEV-PC\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Trigger.sql</FullPath>
+        </FileNode>
+        <FileNode Name="update event id for pic.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:benchuk.no-ip.info\SQLEXPRESS:False:benchuk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>benchuk.no-ip.info\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>benchuk</AssociatedConnUserName>
+          <FullPath>update event id for pic.sql</FullPath>
+        </FileNode>
+        <FileNode Name="View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:BENDEV-PC\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>BENDEV-PC\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>View.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
